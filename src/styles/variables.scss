@@ -1,0 +1,22 @@
+@use "sass:color";
+
+$primary-font-family: "Karik";
+
+$primary-color: #1dac8d;
+$secondary-color: adjust-hue($primary-color, 60);
+
+$primary-color-dark: color.scale($primary-color, $lightness: -30%);
+$primary-color-darker: color.scale($primary-color, $lightness: -60%);
+$primary-color-darkest: color.scale($primary-color, $lightness: -90%);
+
+$primary-color-light: color.scale($primary-color, $lightness: 30%);
+$primary-color-lighter: color.scale($primary-color, $lightness: 60%);
+$primary-color-lightest: color.scale($primary-color, $lightness: 90%);
+
+$secondary-color-dark: color.scale($secondary-color, $lightness: -30%);
+$secondary-color-darker: color.scale($secondary-color, $lightness: -60%);
+$secondary-color-darkest: color.scale($secondary-color, $lightness: -90%);
+
+$secondary-color-light: color.scale($secondary-color, $lightness: 30%);
+$secondary-color-lighter: color.scale($secondary-color, $lightness: 60%);
+$secondary-color-lightest: color.scale($secondary-color, $lightness: 90%);

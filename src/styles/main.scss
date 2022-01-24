@@ -1,0 +1,132 @@
+@import './fonts.scss';
+@import './marquee.scss';
+@import './markdown.scss';
+@import './footer.scss';
+
+@import'./variables.scss';
+
+html {
+    font-family: $primary-font-family;
+}
+
+body {
+  color: $primary-color;
+}
+
+
+nav li {
+    margin: 2rem;
+}
+
+header {
+    display: grid;
+    width:100%;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: "left nav right";
+    pointer-events: none;
+    text-align: center;
+}
+
+nav {
+    grid-area: nav;
+    width: 100%;
+    pointer-events: all;
+}
+
+header li {
+    color: $primary-color-darkest;
+    text-decoration: none;
+    display: inline;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#active-nav-tab{
+    color: $primary-color;
+}
+
+#logo-container {
+    pointer-events: none;
+    position: fixed;
+    left: 5%;
+    top: 15%;
+    border: 4px $primary-color solid;
+    background-color: white;
+    z-index: 9999;
+    width: 20%;
+    padding: 0;
+    video {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#body-container {
+    display: grid;
+    width:100%;
+    height:80vh;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "left center right";
+}
+
+.body-center-content {
+    grid-area: center;
+    outline: 4px solid $primary-color;
+    overflow: scroll;
+}
+
+.iframe-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+.iframe-center-container {
+    height: 100%;
+    width: 95%;
+    float: right;
+}
+
+#syllabus {
+    border: hidden;
+}
+  
+.iframe-container iframe {
+    overflow:hidden;
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    header {
+        margin: 0;
+        grid-template-columns: 1fr;
+        grid-template-areas: "nav";
+        li {
+            font-size: 1.2em;
+            margin: 0.5rem;
+        }
+    }
+
+    #logo-container {
+        visibility: hidden;
+    }
+
+    #body-container {
+        display: inline-block;
+        overflow: hidden;
+        font-size: 0.9rem;
+    }
+    
+    .body-center-content {
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    nav ul {
+        padding: 0;
+    }
+}
+

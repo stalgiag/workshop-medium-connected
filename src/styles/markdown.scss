@@ -1,0 +1,93 @@
+@counter-style thumbs {
+    system: cyclic;
+    symbols: "\3030";
+    suffix: " ";
+  }
+
+@counter-style circled-alpha {
+    system: fixed;
+    symbols:  ➊ ➋ ➌ ➍ ➎ ➏ ➐ ➑ ➒ ➓;
+    suffix: " ";
+}
+
+.markdown-content {
+    padding: 4rem 4rem 0rem 6rem;
+    color: $primary-color-darker;
+    li {
+        color: indigo;
+        list-style-type: circled-alpha;
+        margin-bottom: 5px;;
+        li {
+            list-style-type: thumbs;
+        }
+    }
+    h1 {
+        text-align: center;
+        text-decoration: underline;
+    }
+    a {
+        color: $secondary-color-dark;
+    }
+    p{
+        margin-bottom: 5px;
+    }
+}
+
+.markdown-content summary {
+    cursor: crosshair;
+    color: $secondary-color-darkest;
+    text-decoration: underline;
+    text-align: right;
+    font-size: 1.4em;
+    padding: 5px 5px 5px 10px;
+    direction: rtl;
+}
+
+.markdown-content details {
+    outline: 1px black solid;
+    padding: 5px;
+    margin-bottom: 20px;
+
+}
+
+
+.class-schedule-details{
+    color:black;
+    direction: ltr;
+    margin-left: 10%;
+    padding-right: 20%;
+}
+
+@media (max-width: 768px) {
+    .markdown-content {
+        padding: 0;
+        text-align: left;
+        max-width: 100%;
+        li {
+            margin-right: 20px;
+        }
+        p{
+            margin-bottom: 2px;
+            text-align: left;
+        }
+    }
+    
+    .markdown-content summary {
+        text-align: right;
+        font-size: 1.4em;
+    }
+    
+    .markdown-content details {
+        padding: 20px;
+        margin-bottom: 0;
+    
+    }
+    
+    
+    .class-schedule-details{
+        color:black;
+        direction: ltr;
+        margin: 5px;
+        padding: 10px;
+    }
+}

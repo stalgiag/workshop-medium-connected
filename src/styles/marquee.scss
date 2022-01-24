@@ -1,0 +1,37 @@
+@import'./variables.scss';
+
+@function marquee-background-color($threshold: .65) {
+    @return if(lightness($primary-color) >= $threshold, $primary-color-darkest, $primary-color-lightest);
+}
+
+$marquee-background-color: marquee-background-color();
+
+.marquee3k{
+    visibility: hidden;
+}
+
+.is-init{
+    visibility: visible;
+}
+
+#marquee-container {
+    background: $marquee-background-color;
+    right: 0;
+    position: fixed;
+    top: 50%;
+    transform-origin: top right;
+    transform: rotate(90deg) translateX(50%);
+    overflow:hidden;
+    max-height: 70px;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    #marquee-container {
+        visibility: hidden;
+    }
+    
+    .is-init{
+        visibility: hidden;
+    }
+}
